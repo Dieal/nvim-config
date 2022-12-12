@@ -53,6 +53,7 @@ return packer.startup(function(use)
   use "Th3Whit3Wolf/one-nvim"
   use "lunarvim/colorschemes"
   use "folke/tokyonight.nvim"
+  use "tanvirtin/monokai.nvim"
 
   -- Utils
   use "jghauser/mkdir.nvim" -- Creates directories when they don't exist (like mkdir -p)
