@@ -199,6 +199,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/chilling/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["vim-visual-multi"] = {
+    loaded = true,
+    path = "/home/chilling/.local/share/nvim/site/pack/packer/start/vim-visual-multi",
+    url = "https://github.com/mg979/vim-visual-multi"
   }
 }
 

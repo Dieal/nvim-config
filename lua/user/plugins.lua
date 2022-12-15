@@ -7,7 +7,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
     "git",
     "clone",
     "--depth",
-    "1",
+    "1", 
     "https://github.com/wbthomason/packer.nvim",
     install_path,
   }
@@ -58,9 +58,10 @@ return packer.startup(function(use)
   -- Utils
   use "jghauser/mkdir.nvim" -- Creates directories when they don't exist (like mkdir -p)
   use { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end } -- Auto pair brackets
-  use 'nvim-tree/nvim-web-devicons'
-  use 'matbme/JABS.nvim' -- Just Another Buffer Switcher is a minimal buffer switcher window for Neovim written.
-  use 'lewis6991/impatient.nvim' -- Makes neovim faster
+  use "nvim-tree/nvim-web-devicons"
+  use "matbme/JABS.nvim" -- Just Another Buffer Switcher is a minimal buffer switcher window for Neovim written.
+  use "lewis6991/impatient.nvim" -- Makes neovim faster
+  use "mg979/vim-visual-multi" -- Multi cursor plugin
 
   -- LSP
   use "neovim/nvim-lspconfig" -- LSP 
@@ -74,7 +75,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lsp" -- lsp completions
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
