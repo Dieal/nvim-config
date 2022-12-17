@@ -62,7 +62,9 @@ return packer.startup(function(use)
   use "matbme/JABS.nvim" -- Just Another Buffer Switcher is a minimal buffer switcher window for Neovim written.
   use "lewis6991/impatient.nvim" -- Makes neovim faster
   use "mg979/vim-visual-multi" -- Multi cursor plugin
-  use "liuchengxu/vim-which-key" -- GUI that shows keybindings available with <Leader> key
+  use { "folke/which-key.nvim", config = function() require("which-key").setup() end }
+  use { "terrortylor/nvim-comment", config = function() require("nvim_comment").setup() end }
+  use "dstein64/vim-startuptime"
 
   -- LSP
   use "neovim/nvim-lspconfig" -- LSP 
@@ -78,7 +80,7 @@ return packer.startup(function(use)
   use "sharkdp/fd"
 
   -- Completion
-  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use "hrsh7th/nvim-cmp" -- Completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
