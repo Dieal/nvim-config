@@ -23,8 +23,6 @@ vim.g.maplocalleader = " "
 
 -- Normal mode
 -- Leader key
-keymap("n", "<leader>x", ":JABSOpen<CR>", opts) -- Opens JABS Window
-keymap("n", "<leader>e", ":Lex 30<cr>", opts) -- Opens Netrw
 
 -- Window Navigation
 keymap("n", "<C-h>", "<C-w>h", opts)

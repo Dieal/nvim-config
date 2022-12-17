@@ -1,8 +1,15 @@
-require "user.lsp"
-require "user.keymaps"
-require "user.options"
-require "user.plugins"
-require "user.plugin_config.cmp"
-require "user.plugin_config.colorscheme"
-require "user.plugin_config.jabs"
-require "user.plugin_config.dashboard"
+local plugins = {
+    --"lsp",
+    "keymaps",
+    "options",
+    "plugins",
+    "plugin_config.cmp",
+    -- "plugin_config.jabs",
+    "plugin_config.impatient",
+    "plugin_config.colorscheme",
+    "plugin_config.whichkey",
+}
+
+for key, value in pairs (plugins) do
+	require ('user.' .. value)
+end

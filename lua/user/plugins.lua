@@ -47,7 +47,7 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
   -- GUI
-  use "glepnir/dashboard-nvim" -- Cool configurable dashboard
+  --use "glepnir/dashboard-nvim" -- Cool configurable dashboard
 
   -- Colorschemes
   use "Th3Whit3Wolf/one-nvim"
@@ -62,12 +62,20 @@ return packer.startup(function(use)
   use "matbme/JABS.nvim" -- Just Another Buffer Switcher is a minimal buffer switcher window for Neovim written.
   use "lewis6991/impatient.nvim" -- Makes neovim faster
   use "mg979/vim-visual-multi" -- Multi cursor plugin
+  use "liuchengxu/vim-which-key" -- GUI that shows keybindings available with <Leader> key
 
   -- LSP
   use "neovim/nvim-lspconfig" -- LSP 
   use "williamboman/mason.nvim" -- LSP Installer
   use "williamboman/mason-lspconfig.nvim"
   use "jose-elias-alvarez/null-ls.nvim"
+
+  -- Treesitter
+  use "nvim-treesitter/nvim-treesitter"
+
+  -- Telescope
+  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' }
+  use "sharkdp/fd"
 
   -- Completion
   use "hrsh7th/nvim-cmp" -- The completion plugin

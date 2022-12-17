@@ -15,6 +15,7 @@ local options = {
     relativenumber = true,  -- set relative numbered lines
     scrolloff = 8,
     termguicolors = true,   -- enables terminal gui colors
+    timeoutlen = 150        -- 'WhichKey' popup time
 
 }
 
