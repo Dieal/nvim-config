@@ -8,6 +8,7 @@ local plugins = {
     "plugin_config.impatient",
     "plugin_config.colorscheme",
     "plugin_config.whichkey",
+    "plugin_config.tree",
 }
 
 for key, value in pairs (plugins) do

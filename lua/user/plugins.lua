@@ -48,9 +48,9 @@ return packer.startup(function(use)
 
   -- GUI
   --use "glepnir/dashboard-nvim" -- Cool configurable dashboard
-  use { 'nvim-lualine/lualine.nvim', config = function() require('lualine').setup{} end }
+  use { 'nvim-lualine/lualine.nvim', requires = { 'nvim-tree/nvim-web-devicons' }, config = function() require('lualine').setup{} end }
 
-
+  use "nvim-tree/nvim-web-devicons"
 
   -- Colorschemes
   use 'Th3Whit3Wolf/one-nvim'
@@ -59,13 +59,16 @@ return packer.startup(function(use)
   use "tanvirtin/monokai.nvim"
 
   -- Utils
-  use "jghauser/mkdir.nvim" -- Creates directories when they don't exist (like mkdir -p)
-  use "nvim-tree/nvim-web-devicons"
-  use "matbme/JABS.nvim" -- Just Another Buffer Switcher is a minimal buffer switcher window for Neovim written.
   use "mg979/vim-visual-multi" -- Multi cursor plugin
-  use { "folke/which-key.nvim", config = function() require("which-key").setup() end }
+  use { "folke/which-key.nvim", config = function() require("which-key").setup() end } -- Keybindings popup
   use 'tpope/vim-fugitive' -- Git wrapper
+  use 'ggandor/lightspeed.nvim'
 
+  -- Files
+  use { "nvim-tree/nvim-tree.lua", requires = { 'nvim-tree/nvim-web-devicons' } }  -- File Tree View
+  use "jghauser/mkdir.nvim" -- Creates directories when they don't exist (like mkdir -p)
+  use "matbme/JABS.nvim" -- Just Another Buffer Switcher is a minimal buffer switcher window for Neovim written.
+  
   -- Surroundings
   use "tpope/vim-surround" -- Quickly delete or change surroundings (brackets, quotes, ecc.)
   use { "terrortylor/nvim-comment", config = function() require("nvim_comment").setup() end } -- Toggle Comments on single / multiple lines
@@ -77,12 +80,12 @@ return packer.startup(function(use)
   use "williamboman/mason-lspconfig.nvim"
   use "jose-elias-alvarez/null-ls.nvim"
 
-  -- Treesitter and fzf
+  -- Treesitter
   use "nvim-treesitter/nvim-treesitter"
-  use "ibhagwan/fzf-lua"
 
-  -- Telescope
+  -- Telescope e fzf
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' }
+  use "ibhagwan/fzf-lua"
   use "sharkdp/fd"
 
   -- Completion
