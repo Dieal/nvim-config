@@ -21,7 +21,13 @@ wk.register({
         v = { "<cmd>vnew<cr>", "New file in vertical split window" },
         h = { "<cmd>vnew<cr>", "New file in horizontal split window" },
         c = { "<cmd>vnew<cr>", "New file in current window" },
-    },
+    }, g = {
+        name = "+git",
+        s = { "<cmd>vertical Git<CR>", "Status" },
+        c = { "<cmd>Git commit<CR>", "Commit" },
+        d = { "<cmd>vertical Git diff<CR>", "Diff" },
+        b = { "<cmd>vertical Git blame<CR>", "Blame" },
+    }
 
 }, { mode = 'n', prefix = '<leader>' })
 

@@ -48,23 +48,28 @@ return packer.startup(function(use)
 
   -- GUI
   --use "glepnir/dashboard-nvim" -- Cool configurable dashboard
+  use { 'nvim-lualine/lualine.nvim', config = function() require('lualine').setup{} end }
+
+
 
   -- Colorschemes
-  use "Th3Whit3Wolf/one-nvim"
+  use 'Th3Whit3Wolf/one-nvim'
   use "lunarvim/colorschemes"
   use "folke/tokyonight.nvim"
   use "tanvirtin/monokai.nvim"
 
   -- Utils
   use "jghauser/mkdir.nvim" -- Creates directories when they don't exist (like mkdir -p)
-  use { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end } -- Auto pair brackets
   use "nvim-tree/nvim-web-devicons"
   use "matbme/JABS.nvim" -- Just Another Buffer Switcher is a minimal buffer switcher window for Neovim written.
-  use "lewis6991/impatient.nvim" -- Makes neovim faster
   use "mg979/vim-visual-multi" -- Multi cursor plugin
   use { "folke/which-key.nvim", config = function() require("which-key").setup() end }
-  use { "terrortylor/nvim-comment", config = function() require("nvim_comment").setup() end }
-  use "dstein64/vim-startuptime"
+  use 'tpope/vim-fugitive' -- Git wrapper
+
+  -- Surroundings
+  use "tpope/vim-surround" -- Quickly delete or change surroundings (brackets, quotes, ecc.)
+  use { "terrortylor/nvim-comment", config = function() require("nvim_comment").setup() end } -- Toggle Comments on single / multiple lines
+  use { "windwp/nvim-autopairs", config = function() require("nvim-autopairs").setup {} end } -- Auto pair brackets
 
   -- LSP
   use "neovim/nvim-lspconfig" -- LSP 
@@ -72,8 +77,9 @@ return packer.startup(function(use)
   use "williamboman/mason-lspconfig.nvim"
   use "jose-elias-alvarez/null-ls.nvim"
 
-  -- Treesitter
+  -- Treesitter and fzf
   use "nvim-treesitter/nvim-treesitter"
+  use "ibhagwan/fzf-lua"
 
   -- Telescope
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x' }
@@ -90,6 +96,10 @@ return packer.startup(function(use)
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+
+  -- Editor Speed
+  use "dstein64/vim-startuptime" -- Analize startup time
+  use "lewis6991/impatient.nvim" -- Makes neovim faster
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
