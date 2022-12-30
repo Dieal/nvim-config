@@ -41,7 +41,7 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
 
-  -- My plugins here
+  -- Basic
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
@@ -68,7 +68,7 @@ return packer.startup(function(use)
   use { "nvim-tree/nvim-tree.lua", requires = { 'nvim-tree/nvim-web-devicons' } }  -- File Tree View
   use "jghauser/mkdir.nvim" -- Creates directories when they don't exist (like mkdir -p)
   use "matbme/JABS.nvim" -- Just Another Buffer Switcher is a minimal buffer switcher window for Neovim written.
-  
+
   -- Surroundings
   use "tpope/vim-surround" -- Quickly delete or change surroundings (brackets, quotes, ecc.)
   use { "terrortylor/nvim-comment", config = function() require("nvim_comment").setup() end } -- Toggle Comments on single / multiple lines
@@ -79,6 +79,11 @@ return packer.startup(function(use)
   use "williamboman/mason.nvim" -- LSP Installer
   use "williamboman/mason-lspconfig.nvim"
   use "jose-elias-alvarez/null-ls.nvim"
+
+  -- Building
+  use { "stevearc/overseer.nvim", config = function () require('overseer').setup({
+      templates = { "builtin", "user.cpp_build" },
+  }) end }
 
   -- Treesitter
   use "nvim-treesitter/nvim-treesitter"
@@ -102,7 +107,7 @@ return packer.startup(function(use)
 
   -- Editor Speed
   use "dstein64/vim-startuptime" -- Analize startup time
-  use "lewis6991/impatient.nvim" -- Makes neovim faster
+  -- use "lewis6991/impatient.nvim" -- Makes neovim faster
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
