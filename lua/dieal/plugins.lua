@@ -95,6 +95,14 @@ require('lazy').setup({
     end,
   },
 
+  -- Programming specific plugins
+  {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('nvim-ts-autotag').setup();
+    end
+  },
+
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
@@ -153,6 +161,45 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
+  -- Navigation
+  {
+    'ggandor/leap.nvim',
+    dependencies= {
+      'tpope/vim-repeat',
+    }
+  },
+
+  {
+    'ahmedkhalf/project.nvim',
+    config = function()
+      require("project_nvim").setup {
+        patterns = { ".git" },
+        mappings = {
+          n = {
+          }
+        }
+      }
+    end
+  },
+
+  -- Note taking
+  --[[ {
+    'vimwiki/vimwiki',
+    config = function()
+        vim.g.vimwiki_list = {
+            {
+                path = '~/documents/notes',
+                syntax = 'markdown',
+                ext = '.md',
+            }
+        }
+        vim.cmd("call vimwiki#vars#init()")
+    end
+  }, ]]
+
+  -- { 'jakewvincent/mkdnflow.nvim' },
+  -- { 'iamcco/markdown-preview.nvim' },
+
   -- Switch between buffers
   { 'ThePrimeagen/harpoon' },
 
@@ -166,6 +213,7 @@ require('lazy').setup({
   -- Benchmark
   { 'dstein64/vim-startuptime' },
 
-  { 'numToStr/FTerm.nvim', }
   -- Terminal
+  { 'numToStr/FTerm.nvim', }
+
 }, {})

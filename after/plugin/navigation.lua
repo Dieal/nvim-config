@@ -15,3 +15,6 @@ vim.g.loaded_netrwPlugin = 1
 require('nvim-tree').setup();
 
 vim.keymap.set('n', '<leader>t', vim.cmd.NvimTreeToggle, { desc = "Toggles [T]ree" })
+
+-- Leap
+require('leap').add_default_mappings()
