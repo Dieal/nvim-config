@@ -96,6 +96,7 @@ mason_lspconfig.setup_handlers {
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 require('luasnip.loaders.from_vscode').lazy_load()
+require'luasnip'.filetype_extend("php", {"html"})
 luasnip.config.setup {}
 
 cmp.setup {
