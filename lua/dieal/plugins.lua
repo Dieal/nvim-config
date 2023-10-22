@@ -214,6 +214,9 @@ require('lazy').setup({
   { 'dstein64/vim-startuptime' },
 
   -- Terminal
-  { 'numToStr/FTerm.nvim', }
+  { 'numToStr/FTerm.nvim', },
+
+  -- Inline code execution
+  { '0x100101/lab.nvim', build = 'cd js && npm ci', dependencies = { 'nvim-lua/plenary.nvim' }},
 
 }, {})
